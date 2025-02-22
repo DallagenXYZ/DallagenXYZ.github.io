@@ -1,7 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hypixel Skyblock Damage Calculator</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .tabs { display: flex; }
+        .tab { padding: 10px; cursor: pointer; border: 1px solid #000; }
+        .tab-content { display: none; padding: 20px; border: 1px solid #000; }
+        .active { display: block; }
+    </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <h1>Hypixel Skyblock Damage Calculator</h1>
+    <div class="tabs">
+        <div class="tab" onclick="showTab('weapons')">Weapons</div>
+        <div class="tab" onclick="showTab('armor')">Armor</div>
+        <div class="tab" onclick="showTab('talismans')">Talismans</div>
+        <div class="tab" onclick="showTab('pets')">Pets</div>
+        <div class="tab" onclick="showTab('stats')">Stats</div>
+    </div>
+    
+    <div id="weapons" class="tab-content active">
+        <h2>Weapons</h2>
+        <label>Weapon Damage: <input type="number" id="weaponDamage"></label>
+        <button onclick="calculateDamage()">Calculate</button>
+    </div>
+    <div id="armor" class="tab-content">
+        <h2>Armor</h2>
+        <p>Armor stats will go here.</p>
+    </div>
+    <div id="talismans" class="tab-content">
+        <h2>Talismans</h2>
+        <p>Talisman bonuses will go here.</p>
+    </div>
+    <div id="pets" class="tab-content">
+        <h2>Pets</h2>
+        <p>Pet effects will go here.</p>
+    </div>
+    <div id="stats" class="tab-content">
+        <h2>Stats</h2>
+        <p>Base stats and multipliers will go here.</p>
+    </div>
+    
+    <script>
+        function showTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.style.display = 'none');
+            document.getElementById(tabName).style.display = 'block';
+        }
+        function calculateDamage() {
+            let weaponDamage = document.getElementById('weaponDamage').value;
+            alert('Damage calculated: ' + weaponDamage); // Placeholder calculation
+        }
+    </script>
 </body>
 </html>
